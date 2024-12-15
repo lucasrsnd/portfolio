@@ -1,0 +1,293 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.blue {
+    color: lightblue;
+}
+
+.p {
+    color: darkcyan;
+    font-weight: bold;
+}
+
+header {
+    padding: 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    position: relative;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.navbar a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background-color: #333;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+.navbar a:hover::after {
+    width: calc(100% - 20px);
+    left: 10px;
+}
+
+.navbar i:hover {
+    color: skyblue;
+}
+
+
+.navbar-link a {
+    margin: 0 10px 0 5px;
+    font-size: 20px;
+}
+
+
+
+/*portifolio*/
+
+.portfolio {
+    width: 85vw;
+    color: #fff;
+    background-color: #333;
+}
+
+.main-title {
+    margin-top: 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.portfolios {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.portfolio-item {
+    width: calc(33.33% - 20px);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.09);
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 10px;
+    box-sizing: border-box;
+    border: 1px solid #333;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 250px;
+    /* Alterado para max-height */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    object-fit: cover;
+}
+
+.tec-icon i {
+    color: #333;
+    font-size: 35px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.hover-items {
+    margin: 15px;
+}
+
+.hover-items h3 {
+    font-size: 25px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.hover-items p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.icons {
+    display: flex;
+    margin-top: 20px;
+}
+
+.icon {
+    font-size: 20px;
+    margin-right: 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.icon:hover {
+    background-color: #333;
+    color: #fff;
+    border: 1.5px solid #333;
+}
+
+.btn-pro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.fa-html5:hover {
+    color: orange;
+    cursor: pointer;
+}
+
+.fa-css3-alt:hover {
+    color: steelblue;
+    cursor: pointer;
+}
+
+.fa-js:hover {
+    color: gold;
+    cursor: pointer;
+}
+
+.fa-react:hover {
+    color: lightskyblue;
+    cursor: pointer;
+}
+
+.fa-node:hover {
+    color: green;
+    cursor: pointer;
+}
+
+.fa-bootstrap:hover {
+    color: purple;
+    cursor: pointer;
+}
+
+.fa-sass:hover {
+    color: palevioletred;
+    cursor: pointer;
+}
+
+.fa-git-alt:hover {
+    color: brown;
+    cursor: pointer;
+}
+
+
+.apg {
+    cursor: not-allowed;
+}
+
+
+
+.controls {
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.control {
+    cursor: pointer;
+    color: white;
+    margin: 0 5px;
+}
+
+.control a {
+    color: white;
+    text-decoration: none;
+}
+
+.control i {
+    font-size: 20px;
+}
+
+.control i:hover {
+    color: skyblue;
+}
+
+
+.footer__bar {
+    background-color: #f7f7f7e1;
+    padding: 10px;
+    color: var(--cor-branca);
+    text-align: center;
+}
+
+.footer__bar__p {
+    font-size: 15px;
+    margin-block: 20px;
+}
+
+/* Estilos para a barra de rolagem (opcional) */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #333;
+}
+
+#scrollTopBtn {
+    transform: rotate(-90deg);
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: transparent;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 20px;
+    border: 1px solid #333;
+}
+
+#scrollTopBtn:hover {
+    color: lightblue;
+    border: 1px solid lightskyblue;
+}

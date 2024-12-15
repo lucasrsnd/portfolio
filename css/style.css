@@ -1,0 +1,680 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.blue {
+    color: lightblue;
+}
+
+.blue-text {
+    color: blue;
+}
+
+.p {
+    color: darkcyan;
+    font-weight: bold;
+}
+
+/* Estilos do cabeçalho */
+
+header {
+    padding: 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    position: relative;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.navbar a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background-color: #333;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+.navbar a:hover::after {
+    width: calc(100% - 20px);
+    left: 10px;
+}
+
+.navbar-link a {
+    margin: 0 10px 0 5px;
+    font-size: 20px;
+}
+
+/*Estilos da section 1*/
+.section {
+    background-color: #333;
+    color: #fff;
+    padding: 50px 0;
+    text-align: left;
+}
+
+.section-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-image {
+    border-radius: 50%;
+    max-width: 400px;
+    display: block;
+    position: relative;
+    z-index: 2;
+}
+
+.image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: -10px;
+    margin: auto;
+    width: 420px;
+    height: 420px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 2px solid lightskyblue;
+    animation: pulseBorder 2s infinite alternate;
+    box-shadow: 0 0 10px rgba(0, 70, 245, 0.3);
+    z-index: 1;
+}
+
+@keyframes pulseBorder {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+
+
+.right-section {
+    max-width: 600px;
+}
+
+.right-section p {
+    margin-right: 10px;
+    line-height: 25px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards; 
+}
+
+
+.fade-in.delayed {
+    animation-delay: 0.9s; 
+}
+
+.name {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.link-intro {
+    font-size: 20px;
+    color: #fff;
+    margin-left: 30px;
+    border: 2px solid #fff;
+    padding: 8px 20px;
+    border-radius: 5px;
+}
+
+.link-intro:hover {
+    background-color: #fff;
+    color: #333;
+    border: 2px solid #333;
+}
+
+.btn-con {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.btn-download {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-download:hover {
+    background-color: #fff;
+    color: #333;
+    border: 2px solid #333;
+}
+
+
+.main-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #333;
+    border: 2px solid #333;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+    margin-right: 10px;
+}
+
+.main-btn:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Estilos da seção 'About' */
+.about {
+    background-color: #fff;
+    margin-top: 50px;
+    padding: 50px 0;
+    width: 100%;
+}
+
+.main-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.about-container {
+    margin: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about-container h4 {
+    margin-bottom: 10px;
+}
+
+.left-about {
+    max-width: 50%;
+}
+
+.right-about {
+    max-width: 40%;
+}
+
+/* Estilos para os itens sobre mim */
+.about-item {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.abt-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.icon-abt {
+    border-right: 1px solid #fff;
+    font-size: 20px;
+    padding: 10px 10px 10px 0;
+    margin-right: 20px;
+}
+
+.icon-abt img {
+    width: 20px;
+}
+
+.large-text {
+    font-size: 2em;
+}
+
+.small-text {
+    font-size: 1.2em;
+}
+
+/*Estilos da seção linguagens*/
+
+#programming-languages {
+    margin-top: 40px;
+    margin-bottom: 80px;
+}
+
+.programming-languages-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.programming-language-item {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.programming-language-item i {
+    font-size: 40px;
+    width: 50px;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.programming-language-item input[type="range"] {
+    width: 150px;
+    margin-inline: 20px;
+}
+
+
+.fa-html5:hover {
+    color: orange;
+    cursor: pointer;
+}
+
+.fa-css3-alt:hover {
+    color: steelblue;
+    cursor: pointer;
+}
+
+.fa-js:hover {
+    color: gold;
+    cursor: pointer;
+}
+
+.fa-react:hover {
+    color: lightskyblue;
+    cursor: pointer;
+}
+
+.fa-node:hover {
+    color: green;
+    cursor: pointer;
+}
+
+.fa-bootstrap:hover {
+    color: purple;
+    cursor: pointer;
+}
+
+.fa-sass:hover {
+    color: palevioletred;
+    cursor: pointer;
+}
+
+.fa-git-alt:hover {
+    color: brown;
+    cursor: pointer;
+}
+
+
+/* Estilos da seção 'Portfolio' */
+
+.portfolio {
+    background-color: #333;
+    width: 85vw;
+    color: #fff;
+    padding: 20px;
+}
+
+.main-title {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.port-text {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.portfolios {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.portfolio-item {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.09);
+    background-color: #fff;
+    border-radius: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    object-fit: cover;
+}
+
+.tec-icon i {
+    color: #333;
+    font-size: 35px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.hover-items {
+    margin: 15px;
+}
+
+.hover-items h3 {
+    font-size: 25px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.hover-items p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.icons {
+    display: flex;
+    margin-top: 20px;
+}
+
+.icon {
+    font-size: 20px;
+    margin-right: 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #fff;
+    background-color: #fff;
+    color: #333;
+    border: 1.5px solid #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.icon:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.btn-pro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+
+/* Estilos da seção skills */
+
+.skills {
+    margin-top: 5rem;
+}
+
+
+.skills__container {
+    text-align: center;
+}
+
+.skills__container h2 {
+    margin-bottom: 5rem;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 370px;
+    overflow: hidden;
+}
+
+.item {
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    text-align: justify;
+    background-color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    transition: 0.5s;
+    left: calc(50% - 110px);
+    top: 0;
+    color: #fff;
+}
+
+.item-titulo {
+    font-size: 26px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 20px;
+}
+
+.item-texto {
+    font-size: 12px;
+    margin-bottom: 1px;
+    height: 180px;
+}
+
+#next,
+#prev {
+    position: absolute;
+    top: 40%;
+    color: #333;
+    background-color: transparent;
+    border: none;
+    font-size: xxx-large;
+    font-family: "Raleway", sans-serif;
+    font-weight: bold;
+    left: 400px;
+    cursor: pointer;
+}
+
+#next {
+    left: unset;
+    right: 400px;
+}
+
+
+
+/* Estilos da seção 'Contact' */
+.contact {
+    background-color: #fff;
+    margin-top: 50px;
+    padding: 50px 0;
+    width: 100%;
+}
+
+.contact h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 30px;
+}
+
+.contact-text {
+    width: 40%;
+}
+
+.contact-text h4 {
+    margin-bottom: 10px;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #333;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.contact-link:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.contact-item i {
+    font-size: 20px;
+    padding: 0 10px 0 0;
+    border-right: 1px solid #333;
+}
+
+.contact-item p {
+    margin-left: 10px;
+}
+
+
+.submit-btn {
+    text-align: left;
+    margin-top: 30px;
+}
+
+/* Controles navegação */
+
+.controls {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.control {
+    cursor: pointer;
+    color: white;
+    margin: 0 5px;
+}
+
+.control i {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.control i:hover {
+    color: skyblue;
+}
+
+
+/*Footer*/
+
+.footer__bar {
+    margin-top: 3rem;
+    background-color: #333;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+}
+
+.footer__bar__p {
+    font-size: 15px;
+    margin-block: 20px;
+}
+
+
+/* Estilos para a barra de rolagem */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #333;
+}
+
+
+
+#scrollTopBtn {
+    transform: rotate(-90deg);
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: none;
+    background-color: transparent;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 20px;
+    border: 1px solid #333;
+}
+
+#scrollTopBtn:hover {
+    color: lightblue;
+    border: 1px solid lightskyblue;
+}
