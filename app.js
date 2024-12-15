@@ -61,7 +61,7 @@ window.onscroll = function () {
 //email
 
 document.getElementById('copiarEmail').addEventListener('click', function () {
-  var email = 'maiajoaogabriel.contact@gmail.com'; 
+  var email = 'lucasalves2180@gmail.com'; 
   navigator.clipboard.writeText(email).then(function () {
       alert('E-mail copiado: ' + email);
   }).catch(function (err) {
