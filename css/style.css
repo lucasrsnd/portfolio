@@ -334,12 +334,6 @@ header {
     margin-inline: 20px;
 }
 
-
-.fa-html5:hover {
-    color: orange;
-    cursor: pointer;
-}
-
 .fa-css3-alt:hover {
     color: steelblue;
     cursor: pointer;
