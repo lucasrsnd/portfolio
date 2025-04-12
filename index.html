@@ -1,306 +1,368 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="assets/icon portfolio.png" type="image/x-icon">
-    <title>Portfólio</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/media.css">
-
-    <script src="https://kit.fontawesome.com/70e732b00c.js" crossorigin="anonymous"></script>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Lucas Resende | Portfólio</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
-<body class="main-content">
-    <header>
-        <nav class="navbar">
-            <h1>Portfólio.</h1>
-            <ul>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#tecnologias">Tecnologias</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#habilidades">Habilidades</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-            <div class="navbar-link">
-                <a href="https://www.linkedin.com/in/lucasrsnd1/" target="_blank"><i
-                        class="fa-brands fa-linkedin"></i></a>
+<body>
+    <header class="navbar">
+        <div class="navbar__logo">
+            <span class="logo__name">Lucas Resende</span>
+        </div>
 
-                <a href=" https://wa.me/5532999430189" target="_blank"><i
-                        class="fa-brands fa-whatsapp"></i></a>
-            </div>
+        <nav class="navbar__links">
+            <a href="#sobre" class="nav__link">Sobre</a>
+            <a href="#habilidades" class="nav__link">Habilidades</a>
+            <a href="#projetos" class="nav__link">Projetos</a>
+            <a href="#contato" class="nav__link">Contato</a>
         </nav>
+
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="navbar__cta">
+            <a href="#contato" class="cta__button">
+                Contrate-me <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
     </header>
 
-    <section class="container section active fade-in" id="home">
-        <div class="section-content">
-            <div class="h-shape"></div>
-            <div class="image-container">
-                <img src="/assets/fotodeperfil.jpg" alt="" class="profile-image">
+<section class="hero">
+    <div class="hero-content">
+        <h1 class="hero-title">Olá, eu sou <span class="hero-name">Lucas Resende</span></h1>
+        <p class="hero-subtitle">Desenvolvedor Backend <span class="typed-text"></span></p>
+        <div class="hero-buttons">
+            <a href="#contato" class="hero-button primary">
+                Contate-me <i class="fas fa-paper-plane"></i>
+            </a>
+            <a href="#projetos" class="hero-button secondary">
+                Ver Projetos <i class="fas fa-code"></i>
+            </a>
+        </div>
+    </div>
+    <div class="hero-scroll">
+        <span>Role para explorar</span>
+        <i class="fas fa-chevron-down bounce"></i>
+    </div>
+</section>
+
+    <section id="sobre" class="about-section">
+        <div class="about-container">
+            <div class="about-photo">
+                <img src="/assets/fotoperfil.webp" alt="Lucas Resende" class="photo-img">
+                <div class="photo-border"></div>
             </div>
-            <div class="right-section">
-                <h1> Olá, sou  <span class="blue">Lucas Resende</span></h1>
-                <h1 class="name" id="typed-text">
-                    Desenvolvedor Fullstack.
-                </h1>
-                <p>
-                    Sou um desenvolvedor fullstack dedicado a construir aplicações completas e intuitivas. Meu portfólio demonstra minha evolução e compromisso com soluções eficientes. Estou sempre em busca de novos desafios para aprimorar meu trabalho.
+
+            <div class="about-content">
+                <h2 class="about-title">Sobre <span class="highlight">Mim</span></h2>
+                <p class="about-text">
+                    Durante minha jornada de desenvolvedor, tive a oportunidade de trabalhar em diversos projetos em
+                    ambientes colaborativos, onde aprendi a importância do trabalho em equipe e desenvolvi principais
+                    habilidades em Java, Spring Boot, PostgreSQL, APIs RESTful e JavaScript. Essas experiências me
+                    permitiram aplicar meus conhecimentos em cenários reais, criando soluções práticas e funcionais, ao
+                    mesmo tempo em que aprimorava minhas habilidades de resolução de problemas.
+                    <br><br>
+                    Estou sempre buscando expandir meus conhecimentos e refinar minhas habilidades em desenvolvimento de
+                    software, com foco na construção de aplicações eficientes e escaláveis. Estou determinado a seguir
+                    um caminho de sucesso, abraçando novos desafios e aproveitando ao máximo cada oportunidade de
+                    crescimento na área de tecnologia.
                 </p>
-    
-                <div class="btn-con">
-                    <a href="/assets/Lucas_Resende_CV.pdf" class="btn-download" download>
-                        <span>Baixar currículo</span>
-                        <span class="btn-icon"><i class="fas fa-download"></i></span>
-                    </a>
-                    <a class="link-intro" href="https://github.com/lucasrsnd" target="_blank"><i
-                            class="fa-brands fa-github"></i></i></a>
-                    <a class="link-intro" href="https://www.linkedin.com/in/lucasrsnd1/" target="_blank"><i
-                            class="fa-brands fa-linkedin"></i></a>
+                <a href="Lucas_Resende_CV.pdf" download class="cv-button">
+                    Visualizar Currículo <i class="fas fa-download"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="projetos" class="projects-section">
+        <div class="projects-container">
+            <h2 class="section-title">Meus <span class="highlight">Projetos</span></h2>
+
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="card-image">
+                        <img src="/assets/todecarro.png" alt="Projeto 1" class="project-img">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="project-title">Tô de Carro</h3>
+                        <p class="project-description">
+                            Plataforma full-stack para gestão de tarefas com Java, Spring Boot e React. Integra APIs
+                            RESTful e PostgreSQL.
+                        </p>
+                        <a href="https://github.com/lucasrsnd/to-de-carro" target="_blank" class="project-link">
+                            Ver repositório <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="card-image">
+                        <img src="/assets/techfrotas.png" alt="Projeto 2" class="project-img">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="project-title">Tech Frotas</h3>
+                        <p class="project-description">
+                            Loja virtual com carrinho de compras, autenticação e pagamento integrado. Feito com
+                            JavaScript e Node.js.
+                        </p>
+                        <a href="https://github.com/lucasrsnd/ti-3-tech-frotas" target="_blank" class="project-link">
+                            Ver repositório <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="card-image">
+                        <img src="/assets/easydonate.png" alt="Projeto 3" class="project-img">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="project-title">Easy Donate</h3>
+                        <p class="project-description">
+                            Aplicativo mobile para controle financeiro pessoal, desenvolvido com React Native e
+                            Firebase.
+                        </p>
+                        <a href="https://github.com/lucasrsnd/ti-2-easy-donate" target="_blank" class="project-link">
+                            Ver repositório <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="more-projects">
+                <a href="https://github.com/lucasrsnd?tab=repositories" target="_blank" class="github-button">
+                    Ver todos os projetos <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="habilidades" class="skills-section">
+        <div class="skills-container">
+            <h2 class="section-title">Minhas <span class="highlight">Habilidades</span></h2>
+
+            <div class="core-skills">
+                <h3 class="skills-subtitle">Principais Competências</h3>
+                <div class="core-skills-list">
+                    <div class="core-skill-item">
+                        <i class="fab fa-java"></i> Java
+                    </div>
+                    <div class="core-skill-item">
+                        <i class="fas fa-leaf"></i> Spring Boot
+                    </div>
+                    <div class="core-skill-item">
+                        <i class="fas fa-database"></i> Banco de Dados
+                    </div>
+                    <div class="core-skill-item">
+                        <i class="fas fa-users"></i> Trabalho em Equipe
+                    </div>
+                    <div class="core-skill-item">
+                        <i class="fas fa-brain"></i> Habilidades Analíticas
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-tabs">
+                <div class="tabs-header">
+                    <button class="tab-button active" data-tab="linguagens">Linguagens</button>
+                    <button class="tab-button" data-tab="frameworks">Frameworks</button>
+                    <button class="tab-button" data-tab="banco-dados">Banco de Dados</button>
+                    <button class="tab-button" data-tab="ferramentas">Ferramentas</button>
+                    <button class="tab-button" data-tab="soft-skills">Soft Skills</button>
+                </div>
+
+                <div class="tab-content active" id="linguagens">
+                    <div class="skill-tag"><i class="fab fa-java"></i> Java</div>
+                    <div class="skill-tag"><i class="fab fa-js"></i> JavaScript</div>
+                    <div class="skill-tag"><i class="fab fa-python"></i> Python</div>
+                    <div class="skill-tag"><i class="fas fa-code"></i> C</div>
+                    <div class="skill-tag"><i class="fab fa-php"></i> PHP</div>
+                    <div class="skill-tag"><i class="fas fa-mobile"></i> Swift</div>
+                    <div class="skill-tag"><i class="fab fa-html5"></i> HTML</div>
+                    <div class="skill-tag"><i class="fab fa-css3-alt"></i> CSS</div>
+                    <div class="skill-tag"><i class="fas fa-database"></i> SQL</div>
+                </div>
+
+                <div class="tab-content" id="frameworks">
+                    <div class="skill-tag"><i class="fas fa-leaf"></i> Spring Boot</div>
+                    <div class="skill-tag"><i class="fab fa-react"></i> React.js</div>
+                    <div class="skill-tag"><i class="fab fa-angular"></i> AngularJS</div>
+                    <div class="skill-tag"><i class="fab fa-node-js"></i> Node.js</div>
+                    <div class="skill-tag"><i class="fas fa-window-maximize"></i> JavaFX</div>
+                </div>
+
+                <div class="tab-content" id="banco-dados">
+                    <div class="skill-tag"><i class="fas fa-database"></i> MySQL</div>
+                    <div class="skill-tag"><i class="fas fa-database"></i> PostgreSQL</div>
+                    <div class="skill-tag"><i class="fas fa-table"></i> PhpMyAdmin</div>
+                </div>
+
+                <div class="tab-content" id="ferramentas">
+                    <div class="skill-tag"><i class="fab fa-git-alt"></i> Git</div>
+                    <div class="skill-tag"><i class="fab fa-github"></i> GitHub</div>
+                    <div class="skill-tag"><i class="fas fa-cubes"></i> Apache Maven</div>
+                    <div class="skill-tag"><i class="fab fa-figma"></i> Figma</div>
+                    <div class="skill-tag"><i class="fab fa-redhat"></i> Red Hat Linux</div>
+                    <div class="skill-tag"><i class="fab fa-microsoft"></i> Microsoft Office</div>
+                </div>
+
+                <div class="tab-content" id="soft-skills">
+                    <div class="skill-tag"><i class="fas fa-users"></i> Trabalho em Equipe</div>
+                    <div class="skill-tag"><i class="fas fa-comments"></i> Comunicação</div>
+                    <div class="skill-tag"><i class="fas fa-chart-line"></i> Habilidades Analíticas</div>
+                    <div class="skill-tag"><i class="fas fa-lightbulb"></i> Resolução de Problemas</div>
+                    <div class="skill-tag"><i class="fas fa-project-diagram"></i> Scrum</div>
+                    <div class="skill-tag"><i class="fas fa-bolt"></i> Metodologias Ágeis</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <main>
-        <section class="container about" id="sobre">
-            <div class="main-title">
-                <h2>Sobre mim</span></h2>
-            </div>
-            <div class="about-container">
-                <div class="left-about">
-                    <h4>Meu percurso</h4>
-                    <p>
-                        Meu nome é Lucas Alves Resende, e atualmente estou cursando Engenharia de Software na PUC Minas. Durante a minha jornada acadêmica, tive a oportunidade de trabalhar em equipe em diversos projetos, onde aprendi a importância da colaboração e desenvolvi habilidades em várias linguagens de programação. Além disso, pude aplicar meus conhecimentos em cenários reais, criando soluções práticas e funcionais. 
-                        <br><br>Estou entusiasmado para expandir meus conhecimentos e continuar aprimorando minhas habilidades na área de tecnologia, e determinado a seguir um caminho de sucesso, pronto para enfrentar novos desafios e aproveitar todas as oportunidades que surgirem.
-                    </p>
-                    <div class="btn-con">
-                        <a href="/assets/Lucas_Resende_CV.pdf" class="btn-download" target="_blank">
-                            <span class="btn-text">Visualizar currículo</span>
-                            <span class="btn-icon"><i class="fas fa-download"></i></span>
-                        </a>
-                    </div>
-                </div>
-                <div class="right-about">
-                    <h4>Formação</h4>
-                    <p>
-                    <div class="about-item">
-                        <div class="abt-text">
-                            <span class="icon-abt"><i class="fa-solid fa-graduation-cap"></i></span>
-                            <div>
-                                <p class="small-text">Graduando em Engenharia de Software</p>
-                                <small>(2023-2027)</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="about-item">
-                    </div>
-                </div>
-            </div>
-        </section>
+    <section id="contato" class="contact-section">
+        <div class="contact-container">
+            <div class="contact-content">
+                <h2 class="section-title">Vamos <span class="highlight">Conversar</span></h2>
 
-        <section class="container" id="tecnologias">
-            <div class="main-title">
-                <h2>Principais Tecnologias</h2>
-            </div>
-            <div class="programming-languages-container">
-                <div>
-                    <div class="programming-language-item">
-                        <i class="fa-brands fa-html5"></i>
-                        <p>Front-end: React.js, JavaScript, Html, Css</p>
-                    </div>
-
-                    <div class="programming-language-item">
-                        <i class="fa-brands fa-java"></i>
-                        <p>Back-end: Java, PHP, Swift, C</p>
-                    </div>
-
-                    <div class="programming-language-item">
-                        <i class="fa-solid fa-database"></i>
-                        <p>Banco de dados: PostgreSQL e MySQL</p>
-                    </div>
-
-                    <div class="programming-language-item">
-                        <i class="fa-brands fa-github"></i>
-                        <p>Controle de versão: Git e Github</p>
-                    </div>
-
-                    <div class="programming-language-item">
-                        <i class="fa-brands fa-plus"></i>
-                        <p>Scrum, métodos ágeis, padrões de projeto, arquitetura de software</p>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <section class="container portfolio" id="projetos">
-            <div class="main-title">
-                <h2>Meus <span class="blue">projetos</span></h2>
-            </div>
-            <p class="port-text">
-                Confira abaixo alguns dos projetos que realizei ao longo da minha jornada de desenvolvedor.
-            </p>
-        
-            <div class="portfolios">
-                <div class="portfolio-item" id="site-1">
-                    <img src="/assets/todecarro.png" alt="todecarro">
-                    <div class="hover-items">
-                        <h3>Tô de Carro</h3>
-                        <div class="tec-icon">
-
-                            <p>Tecnologias utilizadas: <span class="p">Java, Spring Boot, PostgreSQL, APIs REST</span></p>
-                        </div>
-                        <p>Desenvolvi um backend completo para aluguel de veículos, com:
-                            API RESTful para cadastro de clientes, pedidos e aprovação de contratos.
-                            Validação fi nanceira e armazenamento seguro em PostgreSQL.
-                            Frontend demonstrativo em HTML/CSS/JS para interação com a API.</p>
-                        <div class="icons">
-                            <a href="https://github.com/lucasrsnd/to-de-carro" class="icon" target="_blank">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="portfolio-item" id="site-2">
-                    <img src="/assets/techfrotas.png" alt="techfrotas">
-                    <div class="hover-items">
-                        <h3>Tech Frotas</h3>
-                        <div class="tec-icon">
-
-                            <p>Tecnologias utilizadas: <span class="p">Java, Spring Boot, PostgreSQL, APIs REST</span></p>
-                        </div>
-                        <p>
-                            Backend para gestão de frotas com cadastro de veículos, motoristas e controle fi nanceiro.
-Relatórios em PDF (economizando 10h/mês em processos manuais).
-Desenvolvido em equipe com Scrum e versionamento no GitHub.
-                        </p>
-                        <div class="icons">
-                            <a href="https://github.com/lucasrsnd/ti-3-tech-frotas" class="icon" target="_blank">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="portfolio-item" id="site-3">
-                    <img src="/assets/techfrotas.png" alt="Imagem do site cafeterias-bh">
-                    <div class="hover-items">
-                        <h3>Easy Donate</h3>
-                        <div class="tec-icon">
-
-                            <p>Tecnologias utilizadas: <span class="p">Java, Spring Boot, MySQL, APIs REST</span></p>
-                        </div>
-                        <p>Backend em Spring Boot para plataforma de doações, com API RESTful e MySQL.
-                            Implementação de cadastro de usuários, instituições e processamento de transações.
-                            Desenvolvimento colaborativo usando Git e Scrum.</p>
-                        <div class="icons">
-                            <a href="https://github.com/lucasrsnd/ti-2-easy-donate" class="icon" target="_blank">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        
-            <p class="port-text" style="text-align: center; margin-top: 20px;">
-                Caso tenha se interessado, <a href="https://github.com/lucasrsnd" target="_blank" class="blue">clique aqui</a> para visitar o meu perfil no GitHub.
-            </p>
-        </section>
-        
-
-        <section class="skills">
-            <div class="section__container skills__container" id="habilidades">
-                <h2>Minhas <span class="blue">Habilidades</span></h2>
-                <div class="slider">
-                    <div class="item">
-                        <h1 class="item-titulo">Cooperação</h1>
-                        <p class="item-texto">Tenho facilidade em atuar de forma integrada com grupos, algo que foi fundamental em projetos acadêmicos. Durante esses trabalhos, desenvolvi ainda mais minha habilidade de cooperar e contribuir para um ambiente produtivo. Estou sempre disposto a oferecer suporte aos colegas, garantindo que as metas sejam alcançadas de maneira conjunta e eficiente.</p>
-
-                    </div>
-                    <div class="item">
-                        <h1 class="item-titulo">Adaptação</h1>
-                        <p class="item-texto">Sou capaz de lidar com desafios de forma eficiente, ajustando-me rapidamente a diferentes contextos e situações. Minha habilidade em solucionar problemas é fortalecida pela facilidade de adaptação e pela gestão eficaz do tempo e das tarefas, mesmo em cenários dinâmicos.
-                        </p>
-
-                    </div>
-                    <div class="item">
-                        <h1 class="item-titulo">Comunicação</h1>
-                        <p class="item-texto">Possuo a habilidade de transmitir ideias de maneira objetiva e acessível, facilitando a comunicação em equipes e projetos. Essa competência foi frequentemente reconhecida por professores durante atividades em grupo na faculdade.</p>
-
-
-                    </div>
-                    <div class="item">
-                        <h1 class="item-titulo">Aprendizado</h1>
-                        <p class="item-texto">Aprendo com rapidez e eficiência, assimilando novos conceitos de forma prática. Minha habilidade de pesquisa me permite encontrar informações relevantes e aplicá-las com precisão, contribuindo continuamente para meu desenvolvimento.</p>
-
-
-                    </div>
-                    <button id="next">></button>
-                    <button id="prev"><</button>
-                </div>
-            </div>
-        </section>
-
-        <section class="container contact" id="contato">
-            <h2>Entre em <span class="blue">Contato</span></h2>
-            <div class="contact-container">
                 <div class="contact-text">
-                    <h4>Contate-me aqui</h4>
-                    <p>Estou em busca de desafios que me permitam expandir meu conhecimento e crescer profissionalmente, sempre colaborando com outros para alcançar resultados significativos. Quer saber como posso agregar valor ao seu projeto? Estou à disposição para conversarmos!
+                    <p>
+                        Como desenvolvedor, estou sempre aberto a novas oportunidades e colaborações.
+                        Se você tem um projeto interessante, quer discutir ideias ou apenas bater um papo sobre
+                        tecnologia,
+                        ficarei feliz em conectar!
                     </p>
-                    <div class="submit-btn">
-                        <a href="#" class="main-btn" id="copiarEmail">
-                            <i class="fas fa-envelope"></i>
-                            <span class="btn-text">Copiar email</span>
-                        </a>
+                    <p>
+                        Atualmente focado em desenvolvimento backend, mas sempre explorando
+                        novas tecnologias e desafios.
+                    </p>
+                </div>
 
-                        <a href=" https://wa.me/5532999430189" class="main-btn" target="_blank">
-                            <i class="fa-brands fa-whatsapp"></i>
-                        </a>
+                <div class="contact-methods">
+                    <div class="social-contact">
+                        <h3><i class="fas fa-share-alt"></i> Entre em contato pelas redes:</h3>
+                        <div class="social-icons">
+                            <a href="mailto:lucasresendedev@gmail.com" class="social-icon" title="E-mail">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="https://wa.me/5532999430189" target="_blank" class="social-icon" title="WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/lucasrsnd1" target="_blank" class="social-icon"
+                                title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://instagram.com/lucasrsnd1" target="_blank" class="social-icon"
+                                title="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://github.com/lucasrsnd" target="_blank" class="social-icon" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="email-copy">
+                        <h3><i class="fas fa-copy"></i>Copie meu e-mail:</h3>
+                        <div class="email-box">
+                            <span id="email-text">lucasresendedev@gmail.com</span>
+                            <button id="copy-btn" class="copy-button">
+                                <i class="far fa-copy"></i> Copiar
+                            </button>
+                        </div>
                     </div>
                 </div>
-                <div class="contact-item">
-                    <a href="mailto:lucasalves2180@gmail.com" class="contact-link" target="_blank">
-                        <i class="fas fa-envelope"></i>
-                        <p>lucasalves2180@gmail.com</p>
+            </div>
+        </div>
+
+        <div id="toast" class="toast-notification">
+            <i class="fas fa-check-circle"></i>
+            <span>E-mail copiado com sucesso!</span>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-wave">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path
+                    d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+                    opacity=".25" fill="#6a11cb"></path>
+                <path
+                    d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+                    opacity=".5" fill="#6a11cb"></path>
+                <path
+                    d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+                    fill="#6a11cb"></path>
+            </svg>
+        </div>
+
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo">Lucas Resende</span>
+                <p class="footer-tagline">Transformando ideias em soluções.</p>
+            </div>
+
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4 class="footer-title">Navegação</h4>
+                    <ul>
+                        <li><a href="#sobre"><i class="fas fa-chevron-right"></i> Sobre</a></li>
+                        <li><a href="#habilidades"><i class="fas fa-chevron-right"></i> Habilidades</a></li>
+                        <li><a href="#projetos"><i class="fas fa-chevron-right"></i> Projetos</a></li>
+                        <li><a href="#contato"><i class="fas fa-chevron-right"></i> Contato</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-title">Redes Sociais</h4>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/lucasrsnd1" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/lucasrsnd" target="_blank" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://instagram.com/lucasrsnd1" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="mailto:lucasresendedev@gmail.com" aria-label="E-mail">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://wa.me/5532999430189" target="_blank" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+
+                    <h4 class="footer-title newsletter-title">Meu Currículo</h4>
+                    <a href="Lucas_Resende_CV.pdf" download class="cv-download">
+                        <i class="fas fa-file-pdf"></i> Baixar Currículo
                     </a>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <button id="scrollTopBtn" onclick="scrollToTop()">></button>
-    </main>
+        <div class="footer-bottom">
+            <div class="copyright">
+                &copy; <span id="year"></span> Lucas Resende. Todos os direitos reservados.
+            </div>
+        </div>
 
-    <footer>
-        <div class="footer__bar">
-            <p class="footer__bar__p">Direitos Autorais © 2024 Lucas Resende. Todos os direitos reservados.</p>
+        <div class="back-to-top">
+            <a href="#sobre" aria-label="Voltar ao topo">
+                <i class="fas fa-arrow-up"></i>
+            </a>
         </div>
     </footer>
 
-    <div class="controls">
-
-        <div class="control">
-            <a href=" https://wa.me/5532999430189" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-        </div>
-
-        <div class="control">
-            <a href="https://github.com/lucasrsnd" target="_blank"><i class="fa-brands fa-github"></i></a>
-        </div>
-        <div class="control">
-            <a href="https://www.linkedin.com/in/lucasrsnd1/" target="_blank"><i
-                    class="fa-brands fa-linkedin"></i></a>
-        </div>
-
-        <div class="control">
-            <a href="/assets/Lucas_Alves_Resende_CV.pdf" target="_blank"><i class="fa-solid fa-download"></i></a>
-        </div>
-    </div>
-    <script src="app.js"></script>
+    <script src="scripts.js"></script>
 </body>
 
 </html>
-
