@@ -50,6 +50,41 @@ function erase() {
     }
 }
 
+// Particulas.js - Cria um efeito dinâmico sutil
+const canvas = document.createElement('canvas');
+canvas.style.position = 'absolute';
+canvas.style.top = '0';
+canvas.style.left = '0';
+canvas.style.zIndex = '-1';
+canvas.style.opacity = '0.9';
+document.querySelector('.hero').prepend(canvas);
+
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = document.querySelector('.hero').offsetHeight;
+
+const particles = Array.from({length: 100}, () => ({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    size: Math.random() * 4 + 2,
+    speed: Math.random() * 0.5 + 0.1,
+    color: Math.random() > 0.5 ? 'rgba(106,17,203,0.9)' : 'rgba(37,117,252,0.9)'
+}));
+
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(p => {
+        p.y += p.speed;
+        if (p.y > canvas.height) p.y = 0;
+        ctx.fillStyle = p.color;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fill();
+    });
+    requestAnimationFrame(animate);
+}
+animate();
+
 document.addEventListener("DOMContentLoaded", function() {
     setTimeout(type, newTextDelay + 250);
 });

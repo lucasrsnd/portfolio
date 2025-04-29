@@ -402,17 +402,17 @@ body {
 .card-image {
     height: 200px;
     overflow: hidden;
+    display: flex; /* Novo */
+    justify-content: center; /* Novo */
+    align-items: center; /* Novo */
 }
 
 .project-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain; /* Mudamos de 'cover' para 'contain' */
     transition: transform 0.5s ease;
-}
-
-.project-card:hover .project-img {
-    transform: scale(1.05);
+    background: #1a1a24; /* Cor de fundo caso a imagem não preencha */
 }
 
 .card-content {
@@ -461,11 +461,54 @@ body {
     transition: all 0.3s ease;
 }
 
+.more-projects {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    margin-top: 2rem;
+    width: 100%;
+}
+
 .github-button:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(106, 17, 203, 0.3);
     gap: 1rem;
 }
+
+.tech-icons {
+    display: inline;
+    gap: 10px;
+    margin: 15px 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tech-icons i {
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+}
+
+.tech-icons i:hover {
+    transform: scale(1.2);
+}
+
+/* Cores específicas */
+.fa-java { color: #007396; }
+.fa-leaf { color: #6DB33F; } /* Spring Boot */
+.fa-html5 { color: #E34F26; }
+.fa-css3-alt { color: #1572B6; }
+.fa-js { color: #F7DF1E; }
+.fa-database { color: #336791; } /* PostgreSQL */
+
+/* Cores específicas para cada tecnologia */
+.fa-java { color: #007396 !important; }
+.fa-leaf { color: #6DB33F !important; } /* Spring Boot */
+.fa-js { color: #F7DF1E !important; }
+.fa-react { color: #61DAFB !important; }
+.fa-html5 { color: #E34F26 !important; }
+.fa-css3-alt { color: #1572B6 !important; }
+.fa-node-js { color: #339933 !important; }
+.fa-database { color: #336791 !important; } /* PostgreSQL */
+.fa-fire { color: #FFCA28 !important; } /* Firebase */
 
 @keyframes cardEntrance {
     from {
@@ -533,19 +576,19 @@ body {
 .core-skills-list {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    padding-bottom: 10px;
+    gap: 0.5rem; /* Reduz o espaço entre os itens */
+    flex-wrap: nowrap; /* Impede a quebra de linha */
     margin: 0 auto;
     max-width: 100%;
+    padding: 0;
+    overflow-x: hidden; /* Impede rolagem horizontal */
 }
 
 .core-skill-item {
     display: flex;
     align-items: center;
     gap: 0.7rem;
-    padding: 0.8rem 1.5rem;
+    padding: 0.6rem 1.36rem;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 50px;
     font-weight: 500;
@@ -695,17 +738,26 @@ body {
 }
 
 .contact-content {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    align-items: center; /* Centraliza todo o conteúdo */
+}
+
+.contact-text {
+    width: 100%;
+    max-width: 800px; /* Ou o valor que preferir */
+    text-align: left; /* Ou 'justify' para texto justificado */
 }
 
 .contact-text p {
+    margin-bottom: 1.5rem; /* Espaço entre parágrafos */
+    line-height: 1.8; /* Melhora a legibilidade */
     font-size: 1.1rem;
-    line-height: 1.8;
     color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 1.5rem;
-    max-width: 700px;
+    max-width: 800px; /* Largura máxima confortável para leitura */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .contact-methods {
@@ -742,6 +794,7 @@ body {
     width: 50px;
     height: 50px;
     border-radius: 50%;
+    text-decoration: none;
     background: rgba(255, 255, 255, 0.05);
     display: flex;
     align-items: center;
@@ -953,6 +1006,7 @@ body {
     color: rgba(255, 255, 255, 0.8);
     transition: all 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    text-decoration: none;
 }
 
 .social-links a:hover {
@@ -1013,6 +1067,20 @@ body {
     visibility: hidden;
     transition: all 0.3s ease;
     z-index: 999;
+    border: none; /* Remove borda padrão */
+    outline: none; /* Remove contorno no focus */
+    cursor: pointer;
+}
+
+/* Estados interativos */
+.back-to-top:active,
+.back-to-top:focus {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%) !important;
+}
+
+.back-to-top:hover {
+    background: linear-gradient(135deg, #5a0db3 0%, #1565d8 100%);
+    transform: translateY(-5px);
 }
 
 .back-to-top.active {
@@ -1020,11 +1088,15 @@ body {
     visibility: visible;
 }
 
-.back-to-top:hover {
-    transform: translateY(-5px);
+.back-to-top i {
+    pointer-events: none;
+    color: white;
 }
 
-/* Responsividade */
+.back-to-top:active i {
+    color: white !important;
+}
+
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;

@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" href="/assets/job.png" type="image/png">
+
 </head>
 
 <body>
@@ -38,24 +40,24 @@
         </div>
     </header>
 
-<section class="hero">
-    <div class="hero-content">
-        <h1 class="hero-title">Olá, eu sou <span class="hero-name">Lucas Resende</span></h1>
-        <p class="hero-subtitle">Desenvolvedor Backend <span class="typed-text"></span></p>
-        <div class="hero-buttons">
-            <a href="#contato" class="hero-button primary">
-                Contate-me <i class="fas fa-paper-plane"></i>
-            </a>
-            <a href="#projetos" class="hero-button secondary">
-                Ver Projetos <i class="fas fa-code"></i>
-            </a>
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Olá, eu sou <span class="hero-name">Lucas Resende</span></h1>
+            <p class="hero-subtitle">Desenvolvedor Backend <span class="typed-text"></span></p>
+            <div class="hero-buttons">
+                <a href="#contato" class="hero-button primary">
+                    Contate-me <i class="fas fa-paper-plane"></i>
+                </a>
+                <a href="#projetos" class="hero-button secondary">
+                    Ver Projetos <i class="fas fa-code"></i>
+                </a>
+            </div>
         </div>
-    </div>
-    <div class="hero-scroll">
-        <span>Role para explorar</span>
-        <i class="fas fa-chevron-down bounce"></i>
-    </div>
-</section>
+        <div class="hero-scroll">
+            <span>Role para explorar</span>
+            <i class="fas fa-chevron-down bounce"></i>
+        </div>
+    </section>
 
     <section id="sobre" class="about-section">
         <div class="about-container">
@@ -78,7 +80,7 @@
                     um caminho de sucesso, abraçando novos desafios e aproveitando ao máximo cada oportunidade de
                     crescimento na área de tecnologia.
                 </p>
-                <a href="Lucas_Resende_CV.pdf" download class="cv-button">
+                <a href="/assets/Lucas_Resende_CV.pdf" download="Lucas_Resende_CV.pdf" class="cv-button">
                     Visualizar Currículo <i class="fas fa-download"></i>
                 </a>
             </div>
@@ -88,57 +90,81 @@
     <section id="projetos" class="projects-section">
         <div class="projects-container">
             <h2 class="section-title">Meus <span class="highlight">Projetos</span></h2>
-
+    
             <div class="projects-grid">
+                <!-- Projeto 1 - Tô de Carro -->
                 <div class="project-card">
                     <div class="card-image">
-                        <img src="/assets/todecarro.png" alt="Projeto 1" class="project-img">
+                        <img src="/assets/todecarro.png" alt="Tô de Carro" class="project-img">
                     </div>
                     <div class="card-content">
                         <h3 class="project-title">Tô de Carro</h3>
+                        <div class="tech-icons">
+                            <i class="fab fa-java" title="Java"></i>
+                            <i class="fas fa-leaf" title="Spring Boot"></i>
+                            <i class="fab fa-html5" title="HTML5"></i>
+                            <i class="fab fa-css3-alt" title="CSS3"></i>
+                            <i class="fab fa-js" title="JavaScript"></i>
+                            <i class="fas fa-database" title="PostgreSQL"></i>
+                        </div>
                         <p class="project-description">
-                            Plataforma full-stack para gestão de tarefas com Java, Spring Boot e React. Integra APIs
-                            RESTful e PostgreSQL.
+                            Sistema completo de aluguel de veículos.
                         </p>
                         <a href="https://github.com/lucasrsnd/to-de-carro" target="_blank" class="project-link">
                             Ver repositório <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
-
+    
+                <!-- Projeto 2 - Apetito -->
                 <div class="project-card">
                     <div class="card-image">
-                        <img src="/assets/techfrotas.png" alt="Projeto 2" class="project-img">
+                        <img src="/assets/apetito.png" alt="Apetito" class="project-img">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="project-title">Apetito</h3>
+                        <div class="tech-icons">
+                            <i class="fab fa-java" title="Java"></i>
+                            <i class="fas fa-leaf" title="Spring Boot"></i>
+                            <i class="fab fa-html5" title="HTML5"></i>
+                            <i class="fab fa-css3-alt" title="CSS3"></i>
+                            <i class="fab fa-js" title="JavaScript"></i>
+                            <i class="fas fa-database" title="PostgreSQL"></i>
+                        </div>
+                        <p class="project-description">
+                            Sistema completo para restaurante.
+                        </p>
+                        <a href="https://github.com/lucasrsnd/ti-4-apetito" target="_blank" class="project-link">
+                            Ver repositório <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+    
+                <!-- Projeto 3 - Tech Frotas -->
+                <div class="project-card">
+                    <div class="card-image">
+                        <img src="/assets/techfrotas.png" alt="Tech Frotas" class="project-img">
                     </div>
                     <div class="card-content">
                         <h3 class="project-title">Tech Frotas</h3>
+                        <div class="tech-icons">
+                            <i class="fab fa-java" title="Java"></i>
+                            <i class="fas fa-leaf" title="Spring Boot"></i>
+                            <i class="fab fa-html5" title="HTML5"></i>
+                            <i class="fab fa-css3-alt" title="CSS3"></i>
+                            <i class="fab fa-js" title="JavaScript"></i>
+                            <i class="fas fa-database" title="PostgreSQL"></i>
+                        </div>
                         <p class="project-description">
-                            Loja virtual com carrinho de compras, autenticação e pagamento integrado. Feito com
-                            JavaScript e Node.js.
+                            Sistema completo de gestão de frotas.
                         </p>
                         <a href="https://github.com/lucasrsnd/ti-3-tech-frotas" target="_blank" class="project-link">
                             Ver repositório <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
-
-                <div class="project-card">
-                    <div class="card-image">
-                        <img src="/assets/easydonate.png" alt="Projeto 3" class="project-img">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="project-title">Easy Donate</h3>
-                        <p class="project-description">
-                            Aplicativo mobile para controle financeiro pessoal, desenvolvido com React Native e
-                            Firebase.
-                        </p>
-                        <a href="https://github.com/lucasrsnd/ti-2-easy-donate" target="_blank" class="project-link">
-                            Ver repositório <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
             </div>
-
+    
             <div class="more-projects">
                 <a href="https://github.com/lucasrsnd?tab=repositories" target="_blank" class="github-button">
                     Ver todos os projetos <i class="fab fa-github"></i>
@@ -223,6 +249,8 @@
                     <div class="skill-tag"><i class="fas fa-lightbulb"></i> Resolução de Problemas</div>
                     <div class="skill-tag"><i class="fas fa-project-diagram"></i> Scrum</div>
                     <div class="skill-tag"><i class="fas fa-bolt"></i> Metodologias Ágeis</div>
+                    <div class="skill-tag"><i class="fas fa-project-diagram"></i> Padrões de Projeto
+                    </div>
                 </div>
             </div>
         </div>
@@ -342,7 +370,7 @@
                     </div>
 
                     <h4 class="footer-title newsletter-title">Meu Currículo</h4>
-                    <a href="Lucas_Resende_CV.pdf" download class="cv-download">
+                    <a href="/assets/Lucas_Resende_CV.pdf" download="Lucas_Resende_CV.pdf" class="cv-button">
                         <i class="fas fa-file-pdf"></i> Baixar Currículo
                     </a>
                 </div>
