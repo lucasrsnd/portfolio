@@ -175,3 +175,107 @@ document.getElementById('hamburger').addEventListener('click', function() {
     navbarLinks.classList.toggle('active');
 });
 
+// Carrossel de Certificados
+const carousel = document.querySelector('.carousel-container');
+const prevBtn = document.querySelector('.carousel-button.prev');
+const nextBtn = document.querySelector('.carousel-button.next');
+const certificateCards = document.querySelectorAll('.certificate-card');
+const cardWidth = certificateCards[0].offsetWidth + 32; // Largura do card + gap
+
+let currentPosition = 0;
+
+nextBtn.addEventListener('click', () => {
+    currentPosition += cardWidth;
+    if (currentPosition > carousel.scrollWidth - carousel.offsetWidth) {
+        currentPosition = carousel.scrollWidth - carousel.offsetWidth;
+    }
+    carousel.scrollTo({
+        left: currentPosition,
+        behavior: 'smooth'
+    });
+});
+
+prevBtn.addEventListener('click', () => {
+    currentPosition -= cardWidth;
+    if (currentPosition < 0) {
+        currentPosition = 0;
+    }
+    carousel.scrollTo({
+        left: currentPosition,
+        behavior: 'smooth'
+    });
+});
+
+// Atualizar botões de navegação
+carousel.addEventListener('scroll', () => {
+    const maxScroll = carousel.scrollWidth - carousel.offsetWidth;
+    
+    if (carousel.scrollLeft <= 0) {
+        prevBtn.style.opacity = '0.5';
+        prevBtn.style.cursor = 'not-allowed';
+    } else {
+        prevBtn.style.opacity = '1';
+        prevBtn.style.cursor = 'pointer';
+    }
+    
+    if (carousel.scrollLeft >= maxScroll) {
+        nextBtn.style.opacity = '0.5';
+        nextBtn.style.cursor = 'not-allowed';
+    } else {
+        nextBtn.style.opacity = '1';
+        nextBtn.style.cursor = 'pointer';
+    }
+});
+
+// Tabs de Aprendizado
+document.querySelectorAll('.learning-tabs .tab-button').forEach(button => {
+    button.addEventListener('click', () => {
+        const tabId = button.dataset.tab;
+        
+        // Remove active class from all buttons and contents
+        document.querySelectorAll('.learning-tabs .tab-button').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        document.querySelectorAll('.learning-tabs .tab-content').forEach(content => {
+            content.classList.remove('active');
+        });
+        
+        // Add active class to clicked button and corresponding content
+        button.classList.add('active');
+        document.getElementById(tabId).classList.add('active');
+    });
+});
+
+// Mostrar informações do período ao clicar (para mobile)
+document.querySelectorAll('.period').forEach(period => {
+    period.addEventListener('click', function() {
+        // Fecha todos os outros tooltips
+        document.querySelectorAll('.period-info').forEach(info => {
+            if (info !== this.querySelector('.period-info')) {
+                info.style.opacity = '0';
+                info.style.visibility = 'hidden';
+            }
+        });
+        
+        // Alterna o tooltip atual
+        const info = this.querySelector('.period-info');
+        if (info.style.opacity === '1') {
+            info.style.opacity = '0';
+            info.style.visibility = 'hidden';
+        } else {
+            info.style.opacity = '1';
+            info.style.visibility = 'visible';
+            info.style.transform = 'translateX(-50%) translateY(10px)';
+        }
+    });
+});
+
+// Fechar tooltips ao clicar em qualquer lugar
+document.addEventListener('click', function(e) {
+    if (!e.target.closest('.period')) {
+        document.querySelectorAll('.period-info').forEach(info => {
+            info.style.opacity = '0';
+            info.style.visibility = 'hidden';
+        });
+    }
+});
