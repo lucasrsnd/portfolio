@@ -1,17 +1,30 @@
+// Menu hambúrguer para mobile
+document.getElementById('hamburger').addEventListener('click', function() {
+    const navbarLinks = document.querySelector('.navbar__links');
+    navbarLinks.classList.toggle('active');
+    this.classList.toggle('active');
+});
+
+// Tabs de habilidades
 document.querySelectorAll('.tab-button').forEach(button => {
     button.addEventListener('click', () => {
+        const tabId = button.dataset.tab;
+        
+        // Remove active class from all buttons and contents
         document.querySelectorAll('.tab-button').forEach(btn => {
             btn.classList.remove('active');
         });
         document.querySelectorAll('.tab-content').forEach(content => {
             content.classList.remove('active');
         });
-
+        
+        // Add active class to clicked button and corresponding content
         button.classList.add('active');
-        document.getElementById(button.dataset.tab).classList.add('active');
+        document.getElementById(tabId).classList.add('active');
     });
 });
 
+// Efeito de digitação no hero
 const typedTextSpan = document.querySelector(".typed-text");
 const cursorSpan = document.querySelector(".cursor");
 
@@ -50,7 +63,12 @@ function erase() {
     }
 }
 
-// Particulas.js - Cria um efeito dinâmico sutil
+// Inicia o efeito de digitação
+document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(type, newTextDelay + 250);
+});
+
+// Animação de partículas no hero
 const canvas = document.createElement('canvas');
 canvas.style.position = 'absolute';
 canvas.style.top = '0';
@@ -85,10 +103,7 @@ function animate() {
 }
 animate();
 
-document.addEventListener("DOMContentLoaded", function() {
-    setTimeout(type, newTextDelay + 250);
-});
-
+// Ajuste de habilidades principais
 function adjustCoreSkills() {
     const container = document.querySelector('.core-skills-list');
     const items = document.querySelectorAll('.core-skill-item');
@@ -109,6 +124,7 @@ function adjustCoreSkills() {
 window.addEventListener('load', adjustCoreSkills);
 window.addEventListener('resize', adjustCoreSkills);
 
+// Copiar e-mail
 const copyBtn = document.getElementById('copy-btn');
 const emailText = document.getElementById('email-text');
 const toast = document.getElementById('toast');
@@ -132,8 +148,10 @@ toast.addEventListener('click', () => {
     toast.classList.remove('active');
 });
 
+// Atualiza o ano no footer
 document.getElementById('year').textContent = new Date().getFullYear();
 
+// Navbar scroll behavior
 let lastScroll = 0;
 const navbar = document.querySelector('.navbar');
 const backToTop = document.querySelector('.back-to-top');
@@ -161,18 +179,20 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// Scroll suave para âncoras
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
         document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
         });
+        
+        // Fecha o menu mobile se estiver aberto
+        if (document.querySelector('.navbar__links').classList.contains('active')) {
+            document.querySelector('.navbar__links').classList.remove('active');
+            document.getElementById('hamburger').classList.remove('active');
+        }
     });
-});
-
-document.getElementById('hamburger').addEventListener('click', function() {
-    const navbarLinks = document.querySelector('.navbar__links');
-    navbarLinks.classList.toggle('active');
 });
 
 // Carrossel de Certificados
@@ -183,18 +203,28 @@ const certificateCards = document.querySelectorAll('.certificate-card');
 const cardWidth = certificateCards[0].offsetWidth + 32; // Largura do card + gap
 
 let currentPosition = 0;
+let maxScroll = carousel.scrollWidth - carousel.offsetWidth;
 
+// Atualiza a posição máxima quando a janela é redimensionada
+window.addEventListener('resize', () => {
+    maxScroll = carousel.scrollWidth - carousel.offsetWidth;
+    updateButtons();
+});
+
+// Navegação para o próximo certificado
 nextBtn.addEventListener('click', () => {
     currentPosition += cardWidth;
-    if (currentPosition > carousel.scrollWidth - carousel.offsetWidth) {
-        currentPosition = carousel.scrollWidth - carousel.offsetWidth;
+    if (currentPosition > maxScroll) {
+        currentPosition = maxScroll;
     }
     carousel.scrollTo({
         left: currentPosition,
         behavior: 'smooth'
     });
+    setTimeout(updateButtons, 300); // Espera a animação terminar
 });
 
+// Navegação para o certificado anterior
 prevBtn.addEventListener('click', () => {
     currentPosition -= cardWidth;
     if (currentPosition < 0) {
@@ -204,49 +234,44 @@ prevBtn.addEventListener('click', () => {
         left: currentPosition,
         behavior: 'smooth'
     });
+    setTimeout(updateButtons, 300); // Espera a animação terminar
 });
 
-// Atualizar botões de navegação
-carousel.addEventListener('scroll', () => {
-    const maxScroll = carousel.scrollWidth - carousel.offsetWidth;
+// Atualiza o estado dos botões de navegação
+function updateButtons() {
+    const currentScroll = carousel.scrollLeft;
     
-    if (carousel.scrollLeft <= 0) {
+    if (currentScroll <= 0) {
         prevBtn.style.opacity = '0.5';
         prevBtn.style.cursor = 'not-allowed';
+        prevBtn.disabled = true;
     } else {
-        prevBtn.style.opacity = '1';
+        prevBtn.style.opacity = '0.8';
         prevBtn.style.cursor = 'pointer';
+        prevBtn.disabled = false;
     }
     
-    if (carousel.scrollLeft >= maxScroll) {
+    if (currentScroll >= maxScroll - 5) { // -5 para margem de erro
         nextBtn.style.opacity = '0.5';
         nextBtn.style.cursor = 'not-allowed';
+        nextBtn.disabled = true;
     } else {
-        nextBtn.style.opacity = '1';
+        nextBtn.style.opacity = '0.8';
         nextBtn.style.cursor = 'pointer';
+        nextBtn.disabled = false;
     }
+}
+
+// Atualiza os botões quando o usuário arrasta o carrossel
+carousel.addEventListener('scroll', () => {
+    currentPosition = carousel.scrollLeft;
+    updateButtons();
 });
 
-// Tabs de Aprendizado
-document.querySelectorAll('.learning-tabs .tab-button').forEach(button => {
-    button.addEventListener('click', () => {
-        const tabId = button.dataset.tab;
-        
-        // Remove active class from all buttons and contents
-        document.querySelectorAll('.learning-tabs .tab-button').forEach(btn => {
-            btn.classList.remove('active');
-        });
-        document.querySelectorAll('.learning-tabs .tab-content').forEach(content => {
-            content.classList.remove('active');
-        });
-        
-        // Add active class to clicked button and corresponding content
-        button.classList.add('active');
-        document.getElementById(tabId).classList.add('active');
-    });
-});
+// Inicializa os botões
+updateButtons();
 
-// Mostrar informações do período ao clicar (para mobile)
+// Tooltips da timeline
 document.querySelectorAll('.period').forEach(period => {
     period.addEventListener('click', function() {
         // Fecha todos os outros tooltips
