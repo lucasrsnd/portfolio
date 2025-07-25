@@ -1,30 +1,25 @@
-// Menu hambúrguer para mobile
-document.getElementById('hamburger').addEventListener('click', function() {
+document.getElementById('hamburger').addEventListener('click', function () {
     const navbarLinks = document.querySelector('.navbar__links');
     navbarLinks.classList.toggle('active');
     this.classList.toggle('active');
 });
 
-// Tabs de habilidades
 document.querySelectorAll('.tab-button').forEach(button => {
     button.addEventListener('click', () => {
         const tabId = button.dataset.tab;
-        
-        // Remove active class from all buttons and contents
+
         document.querySelectorAll('.tab-button').forEach(btn => {
             btn.classList.remove('active');
         });
         document.querySelectorAll('.tab-content').forEach(content => {
             content.classList.remove('active');
         });
-        
-        // Add active class to clicked button and corresponding content
+
         button.classList.add('active');
         document.getElementById(tabId).classList.add('active');
     });
 });
 
-// Efeito de digitação no hero
 const typedTextSpan = document.querySelector(".typed-text");
 const cursorSpan = document.querySelector(".cursor");
 
@@ -37,11 +32,11 @@ let charIndex = 0;
 
 function type() {
     if (charIndex < textArray[textArrayIndex].length) {
-        if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+        if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
         typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
         charIndex++;
         setTimeout(type, typingDelay);
-    } 
+    }
     else {
         cursorSpan.classList.remove("typing");
         setTimeout(erase, newTextDelay);
@@ -50,25 +45,23 @@ function type() {
 
 function erase() {
     if (charIndex > 0) {
-        if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
-        typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex-1);
+        if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+        typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
         charIndex--;
         setTimeout(erase, erasingDelay);
-    } 
+    }
     else {
         cursorSpan.classList.remove("typing");
         textArrayIndex++;
-        if(textArrayIndex>=textArray.length) textArrayIndex=0;
+        if (textArrayIndex >= textArray.length) textArrayIndex = 0;
         setTimeout(type, typingDelay + 1100);
     }
 }
 
-// Inicia o efeito de digitação
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     setTimeout(type, newTextDelay + 250);
 });
 
-// Animação de partículas no hero
 const canvas = document.createElement('canvas');
 canvas.style.position = 'absolute';
 canvas.style.top = '0';
@@ -81,7 +74,7 @@ const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = document.querySelector('.hero').offsetHeight;
 
-const particles = Array.from({length: 100}, () => ({
+const particles = Array.from({ length: 100 }, () => ({
     x: Math.random() * canvas.width,
     y: Math.random() * canvas.height,
     size: Math.random() * 4 + 2,
@@ -103,17 +96,16 @@ function animate() {
 }
 animate();
 
-// Ajuste de habilidades principais
 function adjustCoreSkills() {
     const container = document.querySelector('.core-skills-list');
     const items = document.querySelectorAll('.core-skill-item');
     const containerWidth = container.offsetWidth;
     let totalWidth = 0;
-    
+
     items.forEach(item => {
         totalWidth += item.offsetWidth + 16;
     });
-    
+
     if (totalWidth > containerWidth) {
         container.style.justifyContent = 'flex-start';
     } else {
@@ -124,7 +116,6 @@ function adjustCoreSkills() {
 window.addEventListener('load', adjustCoreSkills);
 window.addEventListener('resize', adjustCoreSkills);
 
-// Copiar e-mail
 const copyBtn = document.getElementById('copy-btn');
 const emailText = document.getElementById('email-text');
 const toast = document.getElementById('toast');
@@ -148,10 +139,8 @@ toast.addEventListener('click', () => {
     toast.classList.remove('active');
 });
 
-// Atualiza o ano no footer
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Navbar scroll behavior
 let lastScroll = 0;
 const navbar = document.querySelector('.navbar');
 const backToTop = document.querySelector('.back-to-top');
@@ -169,7 +158,7 @@ window.addEventListener('scroll', () => {
         navbar.style.transform = 'translateY(0)';
         navbar.style.transition = 'transform 0.3s ease-out';
     }
-    
+
     lastScroll = currentScroll;
 
     if (currentScroll > 300) {
@@ -179,15 +168,13 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Scroll suave para âncoras
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', function (e) {
         e.preventDefault();
         document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
         });
-        
-        // Fecha o menu mobile se estiver aberto
+
         if (document.querySelector('.navbar__links').classList.contains('active')) {
             document.querySelector('.navbar__links').classList.remove('active');
             document.getElementById('hamburger').classList.remove('active');
@@ -195,23 +182,20 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Carrossel de Certificados
 const carousel = document.querySelector('.carousel-container');
 const prevBtn = document.querySelector('.carousel-button.prev');
 const nextBtn = document.querySelector('.carousel-button.next');
 const certificateCards = document.querySelectorAll('.certificate-card');
-const cardWidth = certificateCards[0].offsetWidth + 32; // Largura do card + gap
+const cardWidth = certificateCards[0].offsetWidth + 32;
 
 let currentPosition = 0;
 let maxScroll = carousel.scrollWidth - carousel.offsetWidth;
 
-// Atualiza a posição máxima quando a janela é redimensionada
 window.addEventListener('resize', () => {
     maxScroll = carousel.scrollWidth - carousel.offsetWidth;
     updateButtons();
 });
 
-// Navegação para o próximo certificado
 nextBtn.addEventListener('click', () => {
     currentPosition += cardWidth;
     if (currentPosition > maxScroll) {
@@ -221,10 +205,9 @@ nextBtn.addEventListener('click', () => {
         left: currentPosition,
         behavior: 'smooth'
     });
-    setTimeout(updateButtons, 300); // Espera a animação terminar
+    setTimeout(updateButtons, 300);
 });
 
-// Navegação para o certificado anterior
 prevBtn.addEventListener('click', () => {
     currentPosition -= cardWidth;
     if (currentPosition < 0) {
@@ -234,13 +217,12 @@ prevBtn.addEventListener('click', () => {
         left: currentPosition,
         behavior: 'smooth'
     });
-    setTimeout(updateButtons, 300); // Espera a animação terminar
+    setTimeout(updateButtons, 300);
 });
 
-// Atualiza o estado dos botões de navegação
 function updateButtons() {
     const currentScroll = carousel.scrollLeft;
-    
+
     if (currentScroll <= 0) {
         prevBtn.style.opacity = '0.5';
         prevBtn.style.cursor = 'not-allowed';
@@ -250,8 +232,8 @@ function updateButtons() {
         prevBtn.style.cursor = 'pointer';
         prevBtn.disabled = false;
     }
-    
-    if (currentScroll >= maxScroll - 5) { // -5 para margem de erro
+
+    if (currentScroll >= maxScroll - 5) {
         nextBtn.style.opacity = '0.5';
         nextBtn.style.cursor = 'not-allowed';
         nextBtn.disabled = true;
@@ -262,27 +244,22 @@ function updateButtons() {
     }
 }
 
-// Atualiza os botões quando o usuário arrasta o carrossel
 carousel.addEventListener('scroll', () => {
     currentPosition = carousel.scrollLeft;
     updateButtons();
 });
 
-// Inicializa os botões
 updateButtons();
 
-// Tooltips da timeline
 document.querySelectorAll('.period').forEach(period => {
-    period.addEventListener('click', function() {
-        // Fecha todos os outros tooltips
+    period.addEventListener('click', function () {
         document.querySelectorAll('.period-info').forEach(info => {
             if (info !== this.querySelector('.period-info')) {
                 info.style.opacity = '0';
                 info.style.visibility = 'hidden';
             }
         });
-        
-        // Alterna o tooltip atual
+
         const info = this.querySelector('.period-info');
         if (info.style.opacity === '1') {
             info.style.opacity = '0';
@@ -295,8 +272,7 @@ document.querySelectorAll('.period').forEach(period => {
     });
 });
 
-// Fechar tooltips ao clicar em qualquer lugar
-document.addEventListener('click', function(e) {
+document.addEventListener('click', function (e) {
     if (!e.target.closest('.period')) {
         document.querySelectorAll('.period-info').forEach(info => {
             info.style.opacity = '0';
